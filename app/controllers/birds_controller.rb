@@ -8,7 +8,8 @@ end
 
   def show
     bird = Bird.find_by(id: params[:id])
-    #render json: {id: bird.id, name: bird.name, species: bird.species }
-    render json: bird.slice(:id, :name, :species)
+    render json: {id: bird.id, name: bird.name, species: bird.species }
+    #render json: bird.slice(:id, :name, :species)
+    render json: {meddage: 'Bird not found'}
   end
 end
